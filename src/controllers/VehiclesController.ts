@@ -15,7 +15,7 @@ export default class VehiclesController {
   }
 
   public create(request: Request, response: Response): Response {
-    const createVehicles = new CreateVehicleService();
+    const createVehicles = new CreateVehicleService(new VehiclesDatabase());
 
     const {
       type,
