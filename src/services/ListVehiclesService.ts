@@ -1,10 +1,10 @@
-import VehiclesDatabase, { Car, Bike } from '../database/VehiclesDatabase';
+import { Car, Bike, IVehicleDatabase } from '../database/VehiclesDatabase';
 
 export default class ListVehicleService {
-  public execute(): Array<Car | Bike> {
-    const vehiclesDatabase = new VehiclesDatabase();
+  constructor(private vehiclesDatabase: IVehicleDatabase) {}
 
-    const vehicles = vehiclesDatabase.read();
+  public execute(): Array<Car | Bike> {
+    const vehicles = this.vehiclesDatabase.read();
 
     return vehicles;
   }

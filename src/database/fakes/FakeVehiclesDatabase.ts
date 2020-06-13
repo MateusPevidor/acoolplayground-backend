@@ -1,4 +1,5 @@
 import { uuid } from 'uuidv4';
+import { IVehicleDatabase } from '../VehiclesDatabase';
 
 interface Vehicle {
   id: string;
@@ -58,7 +59,7 @@ export class Bike implements Vehicle {
   }
 }
 
-export default class VehiclesDatabase {
+export default class VehiclesDatabase implements IVehicleDatabase {
   public read(): Array<Car | Bike> {
     const vehicles = [
       {

@@ -60,7 +60,12 @@ export class Bike implements Vehicle {
   }
 }
 
-export default class VehiclesDatabase {
+export interface IVehicleDatabase {
+  read(): Array<Car | Bike>;
+  save(vehicle: Car | Bike): Car | Bike;
+}
+
+export default class VehiclesDatabase implements IVehicleDatabase {
   public read(): Array<Car | Bike> {
     const data = fs.readFileSync(
       path.resolve(__dirname, 'vehicles.json'),

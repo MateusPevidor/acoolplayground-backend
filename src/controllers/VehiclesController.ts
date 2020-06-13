@@ -1,10 +1,13 @@
 import { Request, Response } from 'express';
+
+import VehiclesDatabase from '../database/VehiclesDatabase';
+
 import ListVehiclesService from '../services/ListVehiclesService';
 import CreateVehicleService from '../services/CreateVehicleService';
 
 export default class VehiclesController {
   public index(request: Request, response: Response): Response {
-    const listVehicles = new ListVehiclesService();
+    const listVehicles = new ListVehiclesService(new VehiclesDatabase());
 
     const vehicles = listVehicles.execute();
 
