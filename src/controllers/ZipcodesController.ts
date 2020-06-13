@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import ListZipcodeService from '../services/ListZipcodeService';
-import api from '../services/ViaCEPApi';
+import api from '../api/ViaCEPApi';
 
 export default class ZipcodesController {
   public async index(request: Request, response: Response): Promise<Response> {
