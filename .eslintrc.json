@@ -32,7 +32,8 @@
     "no-plusplus": "off",
     "no-restricted-syntax": "off",
     "no-await-in-loop": "off",
-    "no-useless-constructor": "off"
+    "no-useless-constructor": "off",
+    "max-classes-per-file": "off"
   },
   "settings": {
     "import/resolver": {
