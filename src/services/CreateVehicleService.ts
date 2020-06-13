@@ -1,4 +1,4 @@
-import VehiclesDatabase, { Car, Bike } from '../database/VehiclesDatabase';
+import { Car, Bike, IVehicleDatabase } from '../database/VehiclesDatabase';
 
 interface CreateVehicleDTO {
   type: 'car' | 'bike';
@@ -9,6 +9,8 @@ interface CreateVehicleDTO {
 }
 
 export default class CreateVehicleService {
+  constructor(private vehiclesDatabase: IVehicleDatabase) {}
+
   public execute({
     type,
     yearOfManufacture,
@@ -16,11 +18,9 @@ export default class CreateVehicleService {
     brand,
     passengerCount: passengers,
   }: CreateVehicleDTO): Car | Bike {
-    const vehiclesDatabase = new VehiclesDatabase();
-
     if (type === 'car') {
       const vehicle = new Car({ model, brand, yearOfManufacture });
-      const createdCar = vehiclesDatabase.save(vehicle);
+      const createdCar = this.vehiclesDatabase.save(vehicle);
       return createdCar;
     }
     if (type === 'bike') {
@@ -34,7 +34,7 @@ export default class CreateVehicleService {
         yearOfManufacture,
         passengers,
       });
-      const createdBike = vehiclesDatabase.save(vehicle);
+      const createdBike = this.vehiclesDatabase.save(vehicle);
       return createdBike;
     }
     throw new Error('Invalid type');
