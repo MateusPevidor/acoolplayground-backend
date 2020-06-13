@@ -1,4 +1,4 @@
-import { Car, Bike, IVehicleDatabase } from '../database/VehiclesDatabase';
+import { Car, Bike, IVehicleDatabase } from '../../database/VehiclesDatabase';
 
 interface CreateVehicleDTO {
   type: 'car' | 'bike';

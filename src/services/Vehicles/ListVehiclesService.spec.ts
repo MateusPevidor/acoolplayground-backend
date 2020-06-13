@@ -1,5 +1,5 @@
 import ListVehiclesService from './ListVehiclesService';
-import FakeVehiclesDatabase from '../database/fakes/FakeVehiclesDatabase';
+import FakeVehiclesDatabase from '../../database/fakes/FakeVehiclesDatabase';
 
 describe('ListVehicles', () => {
   it('should be able to list vehicles', () => {

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import ListPalindromeService from '../services/ListPalindromeService';
+import ListPalindromeService from '../services/Palindromes/ListPalindromeService';
 
 export default class PalindromesController {
   public index(request: Request, response: Response): Response {

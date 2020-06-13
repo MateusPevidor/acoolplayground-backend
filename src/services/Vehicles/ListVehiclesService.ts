@@ -1,4 +1,4 @@
-import { Car, Bike, IVehicleDatabase } from '../database/VehiclesDatabase';
+import { Car, Bike, IVehicleDatabase } from '../../database/VehiclesDatabase';
 
 export default class ListVehicleService {
   constructor(private vehiclesDatabase: IVehicleDatabase) {}

@@ -1,5 +1,5 @@
 import CreateVehicleService from './CreateVehicleService';
-import FakeVehiclesDatabase from '../database/fakes/FakeVehiclesDatabase';
+import FakeVehiclesDatabase from '../../database/fakes/FakeVehiclesDatabase';
 
 describe('CreateVehicles', () => {
   it('should be able to create new vehicles', () => {

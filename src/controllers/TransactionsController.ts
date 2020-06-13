@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import CalculateTransactionService from '../services/CalculateTransactionService';
+import CalculateTransactionService from '../services/Transactions/CalculateTransactionService';
 
 export default class TransactionsController {
   public index(request: Request, response: Response): Response {

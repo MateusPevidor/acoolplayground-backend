@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import ListZipcodeService from '../services/ListZipcodeService';
+import ListZipcodeService from '../services/Zipcodes/ListZipcodeService';
 import api from '../api/ViaCEPApi';
 
 export default class ZipcodesController {

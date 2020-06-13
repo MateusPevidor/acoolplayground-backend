@@ -2,8 +2,8 @@ import { Request, Response } from 'express';
 
 import VehiclesDatabase from '../database/VehiclesDatabase';
 
-import ListVehiclesService from '../services/ListVehiclesService';
-import CreateVehicleService from '../services/CreateVehicleService';
+import ListVehiclesService from '../services/Vehicles/ListVehiclesService';
+import CreateVehicleService from '../services/Vehicles/CreateVehicleService';
 
 export default class VehiclesController {
   public index(request: Request, response: Response): Response {

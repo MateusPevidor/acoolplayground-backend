@@ -1,6 +1,6 @@
 import { AxiosInstance } from 'axios';
 
-import { IFakeApi } from '../api/fakes/FakeViaCEPApi';
+import { IFakeApi } from '../../api/fakes/FakeViaCEPApi';
 
 interface Address {
   cep: string;

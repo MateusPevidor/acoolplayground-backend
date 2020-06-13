@@ -1,5 +1,5 @@
 import ListZipcodeService from './ListZipcodeService';
-import FakeApi from '../api/fakes/FakeViaCEPApi';
+import FakeApi from '../../api/fakes/FakeViaCEPApi';
 
 describe('ListZipcodes', () => {
   it('should be able to list retrieve info from given zipcodes', async () => {
