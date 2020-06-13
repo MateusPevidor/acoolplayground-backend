@@ -5,7 +5,7 @@ interface CreateVehicleDTO {
   yearOfManufacture: number;
   model: string;
   brand: string;
-  passengerCount: 1 | 2 | null;
+  passengerCount?: 1 | 2 | null;
 }
 
 export default class CreateVehicleService {
@@ -26,6 +26,10 @@ export default class CreateVehicleService {
     if (type === 'bike') {
       if (!passengers) {
         throw new Error('Passenger count was not given');
+      }
+
+      if (passengers > 2) {
+        throw new Error('Passenger count cannot exceed 2');
       }
 
       const vehicle = new Bike({
