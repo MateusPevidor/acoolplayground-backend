@@ -22,8 +22,10 @@ export default class ListZipcodeService {
 
     for (const zipcode of zipcodes) {
       try {
-        const response = await this.api.get<Address>(`${zipcode}/json`);
-        zipcodesInfo.push(response.data as Address);
+        if (zipcode !== '') {
+          const response = await this.api.get<Address>(`${zipcode}/json`);
+          zipcodesInfo.push(response.data as Address);
+        }
       } catch (err) {
         console.log(`Error querying ViaCEP`);
       }
