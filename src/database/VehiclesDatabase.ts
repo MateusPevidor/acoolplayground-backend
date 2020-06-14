@@ -81,15 +81,20 @@ export default class VehiclesDatabase implements IVehicleDatabase {
       path.resolve(__dirname, 'vehicles.json'),
       'utf8',
     );
-    const vehicles = JSON.parse(data) as Array<Car | Bike>;
+    const vehicles = JSON.parse(data);
 
-    vehicles.push(vehicle);
+    const newVehicle = {
+      type: vehicle instanceof Car ? 'car' : 'bike',
+      ...vehicle,
+    };
+
+    vehicles.push(newVehicle);
 
     fs.writeFileSync(
       path.resolve(__dirname, 'vehicles.json'),
       JSON.stringify(vehicles),
     );
 
-    return vehicle;
+    return newVehicle;
   }
 }

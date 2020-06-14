@@ -3,14 +3,14 @@ import CalculateTransactionService from '../services/Transactions/CalculateTrans
 
 export default class TransactionsController {
   public index(request: Request, response: Response): Response {
-    const { transactionValue, received } = request.body;
+    const { transactionValue, received } = request.query;
 
     const calculateTransaction = new CalculateTransactionService();
 
     try {
       const transactionData = calculateTransaction.execute({
-        transactionValue,
-        received,
+        transactionValue: Number(transactionValue),
+        received: Number(received),
       });
 
       return response.json(transactionData);

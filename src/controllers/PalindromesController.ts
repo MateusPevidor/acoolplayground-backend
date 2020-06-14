@@ -8,15 +8,15 @@ export default class PalindromesController {
       maximumValue,
       isLeftOpen,
       isRightOpen,
-    } = request.body;
+    } = request.query;
 
     const listPalindromes = new ListPalindromeService();
 
     const palindromes = listPalindromes.execute({
-      minimumValue,
-      maximumValue,
-      isLeftOpen,
-      isRightOpen,
+      minimumValue: Number(minimumValue),
+      maximumValue: Number(maximumValue),
+      isLeftOpen: isLeftOpen === 'true',
+      isRightOpen: isRightOpen === 'true',
     });
 
     return response.json(palindromes);

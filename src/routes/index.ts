@@ -19,6 +19,6 @@ routes.get('/transactions', transactionsController.index);
 routes.get('/vehicles', vehiclesController.index);
 routes.post('/vehicles', vehiclesController.create);
 
-routes.get('/cep', zipcodesController.index);
+routes.post('/cep', zipcodesController.index);
 
 export default routes;
