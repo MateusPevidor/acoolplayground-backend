@@ -10,6 +10,12 @@ This is a programming challenge splitted into four main challenges:
 [3. Vehicle registering](#vehicle-registering)<br>
 [4. Zip code lookup](#zip-code-lookup)
 
+## How to run
+In the root folder run:
+
+1. ``npm i`` or ``yarn`` to download dependencies.<br>
+2. ``npm run dev:server`` or ``yarn dev:server`` to run.
+
 ## Development
 This application was Test-Driven developed using [Jest](https://jestjs.io/), [Node.js](https://nodejs.org/) and [TypeScript](https://www.typescriptlang.org/).
 
